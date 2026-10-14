@@ -1,0 +1,286 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choco Hub - Handmade Chocolates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Playfair Display',serif;color:#32190f;background:#fff8ef}
+a{text-decoration:none;color:inherit}
+:root{--dark:#32160d;--brown:#4a2517;--cream:#fff5e9;--peach:#edc09e}
+
+header{height:74px;background:var(--dark);color:white}
+nav{max-width:1200px;height:100%;margin:auto;padding:0 25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand-icon{font-size:35px;color:var(--peach)}
+.brand h2{font-size:27px;font-weight:600}
+.brand small{display:block;text-align:center;font-size:9px;letter-spacing:1px;color:#e7cbb6}
+.links{display:flex;align-items:center;gap:30px;font-size:13px}
+.links a:hover{color:var(--peach)}
+.top-btn,.hero-btn,.shop-btn{background:var(--peach);color:var(--dark);border-radius:25px;padding:10px 22px;font-size:12px;font-weight:600;white-space:nowrap}
+
+/* HERO */
+.hero{
+height:354px;
+background:linear-gradient(90deg,rgba(37,14,6,.92),rgba(37,14,6,.60) 36%,rgba(37,14,6,.04) 80%),
+url('https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=1800&q=90');
+background-size:cover;
+background-position:center 52%;
+display:flex;align-items:center;color:white
+}
+.hero-content{width:1200px;max-width:100%;padding:20px 45px;margin:auto}
+.hero h1{font-family:'Dancing Script',cursive;font-size:66px;font-weight:500;margin-bottom:5px}
+.hero h2{font-size:25px;font-weight:400;line-height:1.35}
+.ornament{color:var(--peach);font-size:21px;margin:10px 0 18px}
+.hero-btn{display:inline-block;padding:13px 24px;font-size:12px}
+.hero-btn:hover,.top-btn:hover,.shop-btn:hover{background:white}
+
+/* FOUR FEATURES */
+.features{height:126px;background:#fff3e6;display:grid;grid-template-columns:repeat(4,1fr);padding:24px max(calc((100% - 1150px)/2),25px)}
+.feature{text-align:center;border-right:1px solid #d9b59b;padding:0 8px}
+.feature:last-child{border:0}
+.feature-icon{font-size:28px;height:36px;color:#4a2517}
+.feature h3{font-size:14px;font-weight:500;margin:3px 0 5px}
+.feature p{font-size:11px;color:#3c2a21}
+
+/* PRODUCTS */
+.products-section{max-width:1200px;margin:auto;padding:17px 25px 20px}
+.heading{text-align:center;margin-bottom:20px}
+.heading h2{font-size:27px;font-weight:700;margin-bottom:4px}
+.heading p{font-size:12px;color:#6f5b50}
+.line{display:inline-block;width:39px;height:1px;background:#927362;vertical-align:middle;margin:0 15px 7px}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.card{border:1px solid #eee1d4;border-radius:5px;overflow:hidden;text-align:center;background:#fffaf5;transition:.25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 18px #32160d16}
+.card img{display:block;width:100%;height:126px;object-fit:cover}
+.card-info{padding:9px 7px 13px}
+.card h3{font-size:12px;font-weight:600;margin-bottom:5px}
+.card p{font-size:10.5px;color:#78675c;min-height:27px;line-height:1.5}
+.price{display:block;font-size:13px;font-weight:700;margin:6px 0 9px}
+.add{background:var(--dark);color:white;border:0;border-radius:25px;width:86%;padding:7px 3px;font-size:10px}
+.add:hover{background:#a66b43}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;min-height:197px;background:#f7e8d9}
+.about-photo{min-height:197px;background:url('https://images.unsplash.com/photo-1475750021426-ff3a6e4e0b6e?auto=format&fit=crop&w=1000&q=85') center/cover}
+.about-copy{padding:22px 7%;display:flex;flex-direction:column;justify-content:center}
+.about-copy h2{font-size:23px;margin-bottom:8px}
+.about-copy p{font-size:12px;line-height:1.65;color:#655348;margin-bottom:12px}
+.about-btn{align-self:flex-start;background:var(--dark);color:white;border-radius:22px;padding:10px 22px;font-size:11px}
+
+/* BROWN PROMO STRIP */
+.promo{min-height:66px;background:#3a1b10;color:var(--peach);display:flex;align-items:center;justify-content:center;gap:23px;padding:12px}
+.promo h2{font-family:'Dancing Script',cursive;font-size:25px;font-weight:500}
+.shop-btn{padding:9px 21px;font-size:11px}
+
+/* FOOTER */
+footer{background:#251008;color:#f7e8dc;border-top:1px solid #68432f}
+.footer-inner{max-width:1200px;min-height:74px;margin:auto;padding:14px 25px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.footer-brand{font-size:19px}
+.footer-brand small{display:block;font-size:8px;color:#d9b9a1}
+.socials{display:flex;gap:12px}
+.socials a{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:var(--peach);color:var(--dark);font-family:Arial;font-size:12px;font-weight:bold}
+.copyright{font:10px Arial,sans-serif;color:#e0ccbd}
+
+/* MOBILE */
+@media(max-width:900px){
+ nav{flex-wrap:wrap;justify-content:center;height:auto;padding:15px}
+ header{height:auto}
+ .links{gap:16px;flex-wrap:wrap;justify-content:center}
+ .top-btn{display:none}
+ .features{height:auto;padding:25px 12px;row-gap:20px}
+ .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .card img{height:145px}
+}
+@media(max-width:600px){
+ .hero{height:360px;background-position:60% center}
+ .hero-content{padding:25px}
+ .hero h1{font-size:48px}
+ .hero h2{font-size:20px}
+ .features{grid-template-columns:repeat(2,1fr)}
+ .feature:nth-child(2){border:0}
+ .products-section{padding:25px 12px}
+ .heading h2{font-size:23px}
+ .line{width:15px;margin:0 4px 6px}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .card img{height:125px}
+ .about{grid-template-columns:1fr}
+ .about-photo{height:220px}
+ .about-copy{padding:25px}
+ .promo{gap:10px;flex-wrap:wrap}
+ .promo h2{font-size:21px}
+ .footer-inner{flex-direction:column;text-align:center;padding:22px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="#home" class="brand">
+<span class="brand-icon">❧</span>
+<span>
+<h2>Choco shop</h2>
+<small>Handmade · Homemade · Delicious</small>
+</span>
+</a>
+
+<div class="links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#shop">Shop</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a href="#shop" class="top-btn">Order Now</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>♡ Choco Hub</h1>
+<h2>Tasty Chocolates<br>Homemade, Delicious Ones</h2>
+<div class="ornament">──────── ♡ ────────</div>
+<a href="#shop" class="hero-btn">Explore Our Chocolates &rarr;</a>
+</div>
+</section>
+
+<section class="features">
+<div class="feature">
+<div class="feature-icon">❧</div>
+<h3>Premium Ingredients</h3>
+<p>Only the best for your taste buds.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">⌂</div>
+<h3>Homemade with Love</h3>
+<p>Freshly made, always.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">♡</div>
+<h3>Rich &amp; Delicious</h3>
+<p>Every bite is a delight.</p>
+</div>
+<div class="feature">
+<div class="feature-icon">☺</div>
+<h3>Happiness in Every Bite</h3>
+<p>Because you deserve it.</p>
+</div>
+</section>
+
+<section class="products-section" id="shop">
+<div class="heading">
+<h2><span class="line"></span>Our Special Chocolates<span class="line"></span></h2>
+<p>Handmade chocolates crafted with love</p>
+</div>
+
+<div class="products" id="gallery">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548907040-4d42e3f4f5b5?auto=format&fit=crop&w=500&q=85" alt="Dark Chocolate">
+<div class="card-info">
+<h3>Dark Chocolate</h3>
+<p>Rich taste, pure happiness.</p>
+<span class="price">₹80</span>
+<button class="add" onclick="order('Dark Chocolate',80)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=500&q=85" alt="Chocolate Truffles">
+<div class="card-info">
+<h3>Chocolate Truffles</h3>
+<p>Soft, creamy, irresistible.</p>
+<span class="price">₹120</span>
+<button class="add" onclick="order('Chocolate Truffles',120)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=500&q=85" alt="Assorted Pralines">
+<div class="card-info">
+<h3>Assorted Pralines</h3>
+<p>A mix of flavors, a lot of love.</p>
+<span class="price">₹150</span>
+<button class="add" onclick="order('Assorted Pralines',150)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=500&q=85" alt="Almond Clusters">
+<div class="card-info">
+<h3>Almond Clusters</h3>
+<p>Crunchy meets chocolate.</p>
+<span class="price">₹100</span>
+<button class="add" onclick="order('Almond Clusters',100)">Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=85" alt="Chocolate Fondant">
+<div class="card-info">
+<h3>Chocolate Fondant</h3>
+<p>Melts in your mouth.</p>
+<span class="price">₹130</span>
+<button class="add" onclick="order('Chocolate Fondant',130)">Add to Cart</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="about-photo"></div>
+<div class="about-copy">
+<h2>About Choco Hub</h2>
+<p>At Choco Hub, we believe that chocolate is more than just a treat — it's an emotion. We create homemade, delicious chocolates using high-quality ingredients, crafted with love and care. Every piece is made to bring a smile to your face and sweetness to your day.</p>
+<a href="#contact" class="about-btn">Learn More &rarr;</a>
+</div>
+</section>
+
+<section class="promo">
+<span>♡</span>
+<h2>Life is Better with Chocolate</h2>
+<span>♡</span>
+<a href="#shop" class="shop-btn">Shop Now</a>
+</section>
+
+<footer id="contact">
+<div class="footer-inner">
+<div class="footer-brand">
+❧ Choco Hub
+<small>Handmade · Homemade · Delicious</small>
+</div>
+<div class="socials">
+<a href="#contact" aria-label="Facebook">f</a>
+<a href="#contact" aria-label="Instagram">◎</a>
+<a href="#contact" aria-label="YouTube">▶</a>
+</div>
+<div class="copyright">© 2026 Choco Hub. All rights reserved. &nbsp; ♥</div>
+</div>
+</footer>
+
+<script>
+function order(name, price) {
+    const phone = "919876543210"; // Replace with your WhatsApp number
+    const message = "Hello Choco Hub! I would like to order " +
+                    name + " for ₹" + price + ".";
+    window.open(
+        "https://wa.me/" + phone + "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+}
+</script>
+
+</body>
+</html>
+```
